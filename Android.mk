@@ -21,7 +21,8 @@ LOCAL_CFLAGS := \
 	-fPIC -DPIC -D_POSIX_SOURCE \
 	-DALSA_CONFIG_DIR=\"/system/usr/share/alsa\" \
 	-DALSA_PLUGIN_DIR=\"/system/usr/lib/alsa-lib\" \
-	-DALSA_DEVICE_DIRECTORY=\"/dev/snd/\"
+	-DALSA_DEVICE_DIRECTORY=\"/dev/snd/\" \
+	-finline-limit=300 -finline-functions -fno-inline-functions-called-once
 
 LOCAL_SRC_FILES := $(sort $(call all-c-files-under, src))
 
